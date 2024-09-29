@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { addDoc, collection, onSnapshot, serverTimestamp, query, where, orderBy } from 'firebase/firestore';
 import { auth, db } from "../../../firebase-config";
-
+import { IoIosSend } from "react-icons/io";
 const ChatRoom = ({ room }) => {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
@@ -68,7 +68,7 @@ const ChatRoom = ({ room }) => {
         <div className='chatRoom'>
             {errorMessage && <div className="error">{errorMessage}</div>} {/* Display error message */}
 
-            <div className='messages'>
+            <div className='messages border-double border-4 border-sky-500'>
                 {messages.map((message) => (
                     <div key={message.id} className='message'>
                         <strong>{message.user}:</strong> {message.text}
@@ -76,14 +76,14 @@ const ChatRoom = ({ room }) => {
                 ))}
             </div>
 
-            <form onSubmit={handleSubmit} className='newMessageForm'>
+            <form onSubmit={handleSubmit} className='newMessageForm flex items-center'>
                 <input
-                    className='newMessageInput'
+                    className='newMessageInput focus:border-red rounded'
                     placeholder='Type a message'
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                 />
-                <button className='sendButton' type='submit'>Send</button>
+                <button className='flex items-center sendButton' type='submit'><IoIosSend />Send</button>
             </form>
         </div>
     );

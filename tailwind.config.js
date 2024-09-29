@@ -12,6 +12,7 @@ export default {
       colors: {
         lightBg: '#BBE9FF',
         darkBg:'#F5E8C7',
+        regalBlue:'#243c5a',
       
       },
     },

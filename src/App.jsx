@@ -6,6 +6,7 @@ import ProjectsSection from './components/ProjectsSection';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
 import ChatApp from './components/chatapp/ChatApp';
+import Experience from './components/Experience';
 import { ThemeProvider } from './components/ThemeContext'; // Ensure this path is correct
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
               <Hero />
               <ProjectsSection />
               <Skills />
+              <Experience/>
               <Footer />
             </>
           } />
