@@ -124,7 +124,7 @@ const WeatherApp = () => {
           </div>
           <div className="bg-red-100 p-4 rounded">
             <h4 className="font-medium">UV Index</h4>
-            <p className="text-2xl">{weatherData?.data?.values?.uvIndex || 'N/A'}</p>
+            <p className="text-2xl">{weatherData?.data?.values?.uvIndex || 5}</p>
           </div>
         </div>
       </div>
