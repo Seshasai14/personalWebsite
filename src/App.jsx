@@ -10,7 +10,7 @@ import WeatherApp from './components/weather/weatherApp';
 import PomodoroClock from './components/pomodoro/pomodoroClock';
 import MarkdownApp from './components/markdown/markdownApp';
 import Experience from './components/Experience';
-import NotFound from './NotFound'; 
+
 import { ThemeProvider } from './components/ThemeContext'; // Ensure this path is correct
 
 const App = () => {
@@ -34,7 +34,7 @@ const App = () => {
           <Route path="/weatherApp" element={<WeatherApp />} /> 
           <Route path="/pomodoroClock" element={<PomodoroClock/>}/>
           <Route path="/markdownPreviewer" element={<MarkdownApp/>}/>
-          <Route path="*" element={<NotFound />} />
+      
         </Routes>
       </ThemeProvider>
     </Router>
