@@ -35,7 +35,7 @@ const App = () => {
           <Route path="/weatherApp" element={<WeatherApp />} /> 
           <Route path="/pomodoroClock" element={<PomodoroClock/>}/>
           <Route path="/markdownPreviewer" element={<MarkdownApp/>}/>
-          <Route  path="/skill-matcher" element={<Home />} />
+          <Route  path="/skillMatcher" element={<Home />} />
           <Route path="/developerForm" element={<DeveloperForm/>} />
           <Route path="/finderPage" element={<FinderPage/>} />
         </Routes>
