@@ -10,9 +10,10 @@ import WeatherApp from './components/weather/weatherApp';
 import PomodoroClock from './components/pomodoro/pomodoroClock';
 import MarkdownApp from './components/markdown/markdownApp';
 import Experience from './components/Experience';
-
-import { ThemeProvider } from './components/ThemeContext'; // Ensure this path is correct
-
+import Home from "./components/skill-matcher/pages/Home";
+import DeveloperForm from "./components/skill-matcher/forms/DeveloperForm";
+import FinderPage from "./components/skill-matcher/forms/FinderPage";
+import { ThemeProvider } from './components/ThemeContext'; 
 const App = () => {
   return (
     <Router>
@@ -34,7 +35,9 @@ const App = () => {
           <Route path="/weatherApp" element={<WeatherApp />} /> 
           <Route path="/pomodoroClock" element={<PomodoroClock/>}/>
           <Route path="/markdownPreviewer" element={<MarkdownApp/>}/>
-      
+          <Route  path="/skill-matcher" element={<Home />} />
+          <Route path="/developerForm" element={<DeveloperForm/>} />
+          <Route path="/finderPage" element={<FinderPage/>} />
         </Routes>
       </ThemeProvider>
     </Router>
