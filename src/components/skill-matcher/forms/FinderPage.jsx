@@ -5,19 +5,18 @@ const DeveloperFinder = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const [domainFilter, setDomainFilter] = useState('');
 
   useEffect(() => {
     fetchDevelopers();
-  }, [currentPage, searchTerm, domainFilter]);
+  }, [currentPage, searchTerm]);
 
   const fetchDevelopers = async () => {
     try {
-      const response = await fetch(`https://render-backend-clnp.onrender.com/api/developers`);
+      const response = await fetch(`https://render-backend-clnp.onrender.com/api/developers?searchTerm=${searchTerm}`);
       const data = await response.json();
-      console.log('Fetched Developers:', data); // Log the fetched data
-      setDevelopers(data.results || data); // Handle both cases: with pagination or not
-      setTotalPages(Math.ceil((data.count || data.length) / 9)); // Update total pages based on results
+      console.log('Fetched Developers:', data);
+      setDevelopers(data.results || data);
+      setTotalPages(Math.ceil((data.count || data.length) / 9));
     } catch (error) {
       console.error('Error fetching developers:', error);
     }
@@ -32,27 +31,15 @@ const DeveloperFinder = () => {
     setCurrentPage(1); // Reset to first page on search
   };
 
-  const handleDomainFilter = (e) => {
-    setDomainFilter(e.target.value);
-    setCurrentPage(1); // Reset to first page on filter
-  };
-
   return (
     <div className="p-4">
       <div className="mb-4">
         <input
           type="text"
-          placeholder="Search by name..."
+          placeholder="Search by any field..."
           value={searchTerm}
           onChange={handleSearch}
-          className="border p-2 rounded"
-        />
-        <input
-          type="text"
-          placeholder="Filter by domain..."
-          value={domainFilter}
-          onChange={handleDomainFilter}
-          className="border p-2 rounded ml-2"
+          className="border p-2 rounded w-full"
         />
       </div>
 
