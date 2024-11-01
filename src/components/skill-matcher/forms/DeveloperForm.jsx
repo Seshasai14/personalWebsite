@@ -22,12 +22,15 @@ const DeveloperForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // Split projects by comma and trim spaces to create an array
+            const projectArray = developer.projects.split(',').map(proj => proj.trim());
+
             const response = await fetch('https://render-backend-clnp.onrender.com/api/developers', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(developer),
+                body: JSON.stringify({ ...developer, projects: projectArray }),
             });
 
             if (response.ok) {
