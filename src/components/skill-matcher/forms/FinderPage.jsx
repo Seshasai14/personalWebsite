@@ -15,6 +15,7 @@ const DeveloperFinder = () => {
     try {
       const response = await fetch(`https://render-backend-clnp.onrender.com/api/developers?page=${currentPage}&name=${searchTerm}&domain=${domainFilter}`);
       const data = await response.json();
+      console.log('Fetched Developers:', data); // Log the fetched data
       setDevelopers(data.results || data); // Handle both cases: with pagination or not
       setTotalPages(Math.ceil((data.count || data.length) / 9)); // Update total pages based on results
     } catch (error) {
@@ -63,9 +64,13 @@ const DeveloperFinder = () => {
               <p className="text-gray-600 mb-2">{developer.domain_expertise}</p>
               <p className="text-gray-600 mb-2">Branch: {developer.branch}</p>
               <div className="space-y-1">
-                {developer.projects.map((project, index) => (
-                  <div key={index} className="text-gray-500">{project}</div>
-                ))}
+                {Array.isArray(developer.projects) ? (
+                  developer.projects.map((project, index) => (
+                    <div key={index} className="text-gray-500">{project}</div>
+                  ))
+                ) : (
+                  <div className="text-red-500">Projects data is not available</div>
+                )}
               </div>
             </div>
             <div className="bg-gray-100 px-4 py-3 flex justify-end">
