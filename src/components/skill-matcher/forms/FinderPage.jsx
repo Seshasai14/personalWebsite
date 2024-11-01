@@ -39,7 +39,7 @@ const DeveloperFinder = () => {
           placeholder="Search by any field..."
           value={searchTerm}
           onChange={handleSearch}
-          className="border p-2 rounded w-full"
+          className="border p-3 rounded-lg w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 hover:shadow-lg transition duration-200 ease-in-out text-gray-700 placeholder-gray-500 bg-white"
         />
       </div>
 
