@@ -13,7 +13,7 @@ const DeveloperFinder = () => {
 
   const fetchDevelopers = async () => {
     try {
-      const response = await fetch(`https://render-backend-clnp.onrender.com/api/developers?page=${currentPage}&name=${searchTerm}&domain=${domainFilter}`);
+      const response = await fetch(`https://render-backend-clnp.onrender.com/api/developers`);
       const data = await response.json();
       console.log('Fetched Developers:', data); // Log the fetched data
       setDevelopers(data.results || data); // Handle both cases: with pagination or not
