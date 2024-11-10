@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom'; 
 import '../index.css';
 import chatApp from '../assets/chatApp.webp';
 import markDown from '../assets/markDown.webp';
 import pomodoroClock from '../assets/pomodoroClock.webp';
 import weatherApp from '../assets/weatherApp.webp';
+import skillMatcher from '../assets/skillMatcher.webp';
 import { ThemeContext } from './ThemeContext';
 const ProjectsSection = () => {
     const projects = [
         { id: 1, name: 'Weather App', img: weatherApp, link: '/weatherApp' },
-        { id: 2, name: 'Chat Application', img: chatApp, link: '/chatApp' },
-        { id: 3, name: 'Pomodoro Clock', img: pomodoroClock, link: '/pomodoroClock' },
-        { id: 4, name: 'Markdown Previewer', img: markDown, link: '/markdownPreviewer' },
+        { id: 2, name: 'Skill Matcher', img:skillMatcher , link: '/skillMatcher' },
+        { id: 3, name: 'Chat Application', img: chatApp, link: '/chatApp' },
+        { id: 4, name: 'Pomodoro Clock', img: pomodoroClock, link: '/pomodoroClock' },
+        { id: 5, name: 'Markdown Previewer', img: markDown, link: '/markdownPreviewer' },
     ];
     const { theme } = useContext(ThemeContext);
     return (

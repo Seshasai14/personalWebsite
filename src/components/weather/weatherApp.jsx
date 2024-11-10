@@ -12,17 +12,14 @@ const WeatherApp = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch current weather data
+        
         const weatherResponse = await axios.get(`https://api.tomorrow.io/v4/weather/realtime?location=${location.toLowerCase()}&apikey=${WEATHER_API_KEY}`);
         setWeatherData(weatherResponse.data);
 
-        // Fetch forecast data
+        
         const forecastResponse = await axios.get(`https://api.tomorrow.io/v4/weather/forecast?location=${location.toLowerCase()}&apikey=${WEATHER_API_KEY}`);
         setForecastData(forecastResponse.data.timelines.daily.slice(0, 5)); // Get 5-day forecast
 
-        // Fetch sunrise and sunset data
-        // Note: You'll need to get the latitude and longitude for the location
-        // This is a placeholder, you should implement geocoding to get accurate coordinates
         const sunResponse = await axios.get(`https://api.sunrisesunset.io/json?lat=38.907192&lng=-77.036873`);
         setSunData(sunResponse.data.results);
       } catch (err) {
