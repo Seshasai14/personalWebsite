@@ -1,3 +1,3 @@
-# Personal-Blog-Website
-Its My Personal Blog Website using React and Tailwind
+# Portfolio Website
+Its My Personal Portfolio Website using React and Tailwind
 

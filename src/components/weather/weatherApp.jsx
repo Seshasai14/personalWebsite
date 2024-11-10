@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'tailwindcss/tailwind.css';
-
 const WeatherApp = () => {
-  const WEATHER_API_KEY = 'JxDOETzSxgDRUdk6LXhIRkXxgf2Fdy3Y';
+  const WEATHER_API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState([]);
   const [location, setLocation] = useState('Visakhapatnam');
