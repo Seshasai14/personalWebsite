@@ -43,8 +43,8 @@ const Hero = () => {
           <p className='font-Robo mt-6 px-4 font-light'>
             With a passion for developing modern React web apps for commercial businesses.
           </p>
-          <a href={CV} download='SeshaSaiCV.pdf' className='shadow-xl mt-6 inline-block hover:animate-bounce'>
-            <button className='bg-blue-500 text-white px-6 py-2 rounded-lg'>Resume</button>
+          <a href="https://drive.google.com/file/d/1BM7KfYSZHLJEtxQT0NTIqC78eDmFGrGd/view?usp=drive_link" target="_blank" className="shadow-xl mt-6 inline-block hover:animate-bounce">
+            <button className="bg-blue-500 text-white px-6 py-2 rounded-lg">Resume</button>
           </a>
         </div>
       </section>
