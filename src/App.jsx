@@ -13,6 +13,7 @@ import Home from "./components/skill-matcher/pages/Home";
 import DeveloperForm from "./components/skill-matcher/forms/DeveloperForm";
 import FinderPage from "./components/skill-matcher/forms/FinderPage";
 import { ThemeProvider } from './components/ThemeContext'; 
+import DetailsForm from './components/tripPlanner/DetailsForm';
 const App = () => {
   return (
     <Router>
@@ -37,6 +38,7 @@ const App = () => {
           <Route  path="/skillMatcher" element={<Home />} />
           <Route path="/developerForm" element={<DeveloperForm/>} />
           <Route path="/finderPage" element={<FinderPage/>} />
+          <Route path="/tripPlanner" element={<DetailsForm/>} />
         </Routes>
       </ThemeProvider>
     </Router>
