@@ -83,7 +83,7 @@ export default function TripPlanner() {
     setError(null);
     
     try {
-      const response = await fetch('http://localhost:5000/api/trip-plan', {
+      const response = await fetch('https://aibackend-3ls0.onrender.com/api/trip-plan', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
